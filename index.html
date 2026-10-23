@@ -161,7 +161,7 @@ footer .fb-link:hover{text-decoration:underline}
 
 /* about */
 .about{background:var(--navy);color:#fff}
-.about .wrap{padding-block:72px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.about .wrap{padding-block:72px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .about h2{color:#fff}
 .about p{margin-top:16px;color:rgba(255,255,255,.82);max-width:34em}
 .about .photo{background:rgba(255,255,255,.12);color:rgba(255,255,255,.75)}
@@ -170,7 +170,7 @@ footer .fb-link:hover{text-decoration:underline}
 .owners .photo{aspect-ratio:4/5}
 .owners figcaption{margin-top:10px;font-size:15px;color:rgba(255,255,255,.8)}
 .owners figcaption b{display:block;font-family:var(--head);font-size:18px;color:#fff;margin-bottom:2px}
-.shopfront{margin-top:20px;aspect-ratio:16/8}
+.shopfront{aspect-ratio:2/1;align-self:center}
 @media (max-width:800px){.about .wrap{grid-template-columns:1fr;gap:32px;padding-block:52px}}
 
 /* find us */
@@ -784,14 +784,16 @@ footer a{color:#fff}
       <h2>About us</h2>
       <p>We opened in The Centre, just off Halstead High Street, in the 1980s and we're still here, still family-run, still doing the work ourselves. There's no franchise behind us and no call centre. If you ring the shop, one of us picks up.</p>
       <p>Many of our customers have been coming in for twenty or thirty years. We've cleaned their wedding dresses, their children's school blazers, and the same winter coat every year. We know most people by name, and we like it that way.</p>
-      <div class="photo shopfront"><svg class="ill" preserveAspectRatio="xMidYMid slice"><use href="#i-shop"/></svg><img class="real" src="images/shopfront.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
     </div>
-    <div class="owners">
+    <div class="photo shopfront"><svg class="ill" preserveAspectRatio="xMidYMid slice"><use href="#i-shop"/></svg><img class="real" src="images/shopfront.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+  </div>
+</section>
+<!-- Owner cards (names, bios, portraits) to be reinstated once details are in:
+<div class="owners">
       <figure><div class="photo"><svg class="ill" preserveAspectRatio="xMidYMid slice"><use href="#i-person"/></svg><img class="real" src="images/owner-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption><b>Name</b>A line or two: how long she's been here and what she looks after.</figcaption></figure>
       <figure><div class="photo"><svg class="ill" preserveAspectRatio="xMidYMid slice"><use href="#i-person2"/></svg><img class="real" src="images/owner-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div><figcaption><b>Name</b>A line or two: how long she's been here and what she looks after.</figcaption></figure>
     </div>
-  </div>
-</section>
+-->
 
 <section class="find" id="find-us">
   <div class="wrap">
