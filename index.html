@@ -269,23 +269,51 @@ footer a{color:#fff}
  <rect width="400" height="300" fill="url(#g-bg)"/>
  <rect width="400" height="300" fill="url(#g-glow)"/>
  <rect x="0" y="230" width="400" height="70" fill="url(#g-floor)"/>
- <rect x="0" y="52" width="400" height="10" rx="5" fill="url(#g-navy)" filter="url(#sh-s)"/>
+ <rect x="0" y="40" width="400" height="10" rx="5" fill="url(#g-navy)" filter="url(#sh-s)"/>
  <g stroke="#A8865A" stroke-width="2.5" fill="none" stroke-linecap="round">
-  <path d="M78 62v10 M170 62v10 M262 62v10 M354 62v10"/>
-  <path d="M46 92 q32 -22 64 0 M138 92 q32 -22 64 0 M230 92 q32 -22 64 0 M322 92 q32 -22 64 0"/>
+  <path d="M62 50v10 M160 50v10 M258 50v10 M352 50v10"/>
+  <path d="M30 80 q32 -22 64 0 M128 80 q32 -22 64 0 M226 80 q32 -22 64 0 M320 80 q32 -22 64 0"/>
  </g>
- <g filter="url(#sh)">
-  <use href="#p-jacket" x="18" y="80" width="120" height="190" fill="url(#g-navy)"/>
-  <use href="#p-jacket" x="110" y="84" width="120" height="190" fill="#C9A77A"/>
-  <use href="#p-jacket" x="202" y="80" width="120" height="190" fill="url(#g-blue)"/>
-  <use href="#p-jacket" x="294" y="84" width="120" height="190" fill="#8FA68C"/>
+ <!-- 1: navy suit jacket -->
+ <g transform="translate(62,66)" filter="url(#sh)">
+  <path d="M0 0 l-18 10 l-30 16 l-8 72 l18 4 v96 h76 v-96 l18 -4 l-8 -72 l-30 -16 l-18 -10z" fill="url(#g-navy)"/>
+  <path d="M0 0 l-16 12 l10 60 l6 14 l6 -14 l10 -60z" fill="#0A1A2E" opacity=".55"/>
+  <path d="M0 0 l-16 12 l10 60 l6 14z" fill="#fff" opacity=".12"/>
+  <path d="M-38 198 h76 v-8 h-76z" fill="#000" opacity=".15"/>
+  <g fill="#C9A24A"><circle cx="6" cy="100" r="2.8"/><circle cx="6" cy="120" r="2.8"/><circle cx="6" cy="140" r="2.8"/></g>
+  <rect x="-30" y="108" width="18" height="3" fill="#fff" opacity=".2"/>
  </g>
- <g fill="#fff" opacity=".28"><use href="#p-lapel" x="18" y="80" width="120" height="190"/><use href="#p-lapel" x="202" y="80" width="120" height="190"/></g>
- <g fill="#000" opacity=".12"><use href="#p-lapel" x="110" y="84" width="120" height="190"/><use href="#p-lapel" x="294" y="84" width="120" height="190"/></g>
- <g fill="var(--blue)"><circle cx="86" cy="150" r="2.5"/><circle cx="86" cy="170" r="2.5"/><circle cx="86" cy="190" r="2.5"/></g>
- <g fill="#5A4630"><circle cx="178" cy="154" r="2.5"/><circle cx="178" cy="174" r="2.5"/><circle cx="178" cy="194" r="2.5"/></g>
- <!-- ticket -->
- <g transform="rotate(-8 120 110)" filter="url(#sh-s)"><rect x="104" y="96" width="34" height="22" rx="3" fill="#F6E7B8"/><circle cx="110" cy="107" r="2" fill="#C9A24A"/><path d="M116 103h16 M116 109h12" stroke="#C9A24A" stroke-width="2"/></g>
+ <!-- 2: blush dress -->
+ <g transform="translate(160,66)" filter="url(#sh)">
+  <path d="M-16 0 q-4 0 -4 6 l2 18 l-22 12 l-12 54 l12 2 l-10 98 h100 l-10 -98 l12 -2 l-12 -54 l-22 -12 l2 -18 q0 -6 -4 -6z" fill="#E6B3B3"/>
+  <path d="M-40 90 l-8 100 h96 l-8 -100z" fill="#DDA3A3"/>
+  <path d="M-16 0 q-4 0 -4 6 l2 18 l-22 12 l-12 54 h100 l-12 -54 l-22 -12 l2 -18 q0 -6 -4 -6z" fill="#fff" opacity=".12"/>
+  <path d="M-30 36 q30 20 60 0" stroke="#fff" stroke-width="2" fill="none" opacity=".5"/>
+  <path d="M-42 92 h84" stroke="#C98C8C" stroke-width="3"/>
+  <g stroke="#fff" stroke-width="1.5" opacity=".35" fill="none"><path d="M-20 100 l-8 86 M0 100 v86 M20 100 l8 86"/></g>
+ </g>
+ <!-- 3: sage blouse -->
+ <g transform="translate(258,66)" filter="url(#sh)">
+  <path d="M0 0 l-14 6 l-32 14 l-10 48 l18 6 v76 h76 v-76 l18 -6 l-10 -48 l-32 -14 l-14 -6z" fill="#9DB39A"/>
+  <path d="M-14 6 q-10 10 -8 24 q12 6 22 0 q10 6 22 0 q2 -14 -8 -24 q-14 8 -28 0z" fill="#B9CDB4"/>
+  <path d="M0 10 q-10 0 -10 10 v10 h20 v-10 q0 -10 -10 -10z" fill="#F1E6D2"/>
+  <path d="M-6 22 l6 -6 l6 6 l-6 10z" fill="#8FA68C"/>
+  <path d="M-46 20 l-10 48 l18 6z M46 20 l10 48 l-18 6z" fill="#000" opacity=".08"/>
+  <g fill="#F1E6D2"><circle cx="0" cy="60" r="2.4"/><circle cx="0" cy="80" r="2.4"/><circle cx="0" cy="100" r="2.4"/><circle cx="0" cy="120" r="2.4"/></g>
+  <path d="M-38 150 h76" stroke="#8FA68C" stroke-width="3"/>
+ </g>
+ <!-- 4: camel overcoat -->
+ <g transform="translate(352,66)" filter="url(#sh)">
+  <path d="M0 0 l-20 8 l-30 18 l-10 76 l18 4 v108 h84 v-108 l18 -4 l-10 -76 l-30 -18 l-20 -8z" fill="#C9A77A"/>
+  <path d="M0 0 l-22 14 l12 62 l-2 138 h12 v-138 l12 -62z" fill="#B08F62"/>
+  <path d="M0 0 l-22 14 l12 62 h10 l12 -62z" fill="#DABB94"/>
+  <path d="M-40 112 h-12 l-6 -6 l6 -6 h12z M40 112 h12 l6 -6 l-6 -6 h-12z" fill="#B08F62"/>
+  <path d="M-42 104 h84" stroke="#A8865A" stroke-width="5"/>
+  <circle cx="0" cy="104" r="4" fill="#8A6A45"/>
+  <g fill="#5A4630"><circle cx="-10" cy="130" r="2.6"/><circle cx="10" cy="130" r="2.6"/><circle cx="-10" cy="156" r="2.6"/><circle cx="10" cy="156" r="2.6"/></g>
+ </g>
+ <!-- ticket on the jacket -->
+ <g transform="rotate(-8 100 96)" filter="url(#sh-s)"><rect x="84" y="86" width="34" height="22" rx="3" fill="#F6E7B8"/><circle cx="90" cy="97" r="2" fill="#C9A24A"/><path d="M96 93h16 M96 99h12" stroke="#C9A24A" stroke-width="2"/></g>
 </symbol>
 
 <!-- folded linen stack -->
