@@ -179,9 +179,18 @@ footer .fb-link:hover{text-decoration:underline}
 .addr{font-style:normal;line-height:1.6;font-size:18px}
 .addr b{font-family:var(--head);font-weight:600;color:var(--navy)}
 .find .cta{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 28px}
-.hours{display:grid;grid-template-columns:auto 1fr;gap:6px 28px;margin:0;max-width:24em}
+.today{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-weight:600;font-size:15px;color:var(--navy);margin-bottom:14px;min-height:22px}
+.today::before{content:"";width:9px;height:9px;border-radius:50%;background:#3BA55D;flex:none}
+.today.shut::before{background:#C4553A}
+.today:empty{display:none}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:0 28px;margin:0;max-width:24em;border-top:1px solid var(--line)}
+.hours dt,.hours dd{padding:7px 0;border-bottom:1px solid var(--line);margin:0}
 .hours dt{color:var(--muted)}
-.hours dd{margin:0;font-variant-numeric:tabular-nums}
+.hours dd{font-variant-numeric:tabular-nums}
+.hours dd.closed{color:var(--muted)}
+.hours .is-today{color:var(--navy);font-weight:600}
+.hours dt.is-today{position:relative;padding-left:14px}
+.hours dt.is-today::before{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;border-radius:50%;background:var(--blue);transform:translateY(-50%)}
 .collect+.collect{margin-top:10px}
 .collect b{font-weight:600;color:var(--navy)}
 .collect{margin-top:24px;padding:16px 18px;background:var(--white);border-left:4px solid var(--blue);font-size:17px}
@@ -785,11 +794,16 @@ footer a{color:#fff}
         <a class="btn" href="tel:01787477230">Call us</a>
         <a class="btn ghost" href="https://maps.google.com/?q=11+The+Centre,+High+Street,+Halstead,+CO9+1AJ">Directions</a>
       </div>
-      <dl class="hours">
-        <dt>Monday to Friday</dt><dd>9.00am to 5.30pm</dd>
-        <dt>Saturday</dt><dd>9.00am to 1.00pm</dd>
-        <dt>Sunday</dt><dd>Closed</dd>
-      </dl>
+      <div class="today" id="today"></div>
+        <dl class="hours" id="hours">
+          <dt data-d="1">Monday</dt><dd>9.00am to 3.00pm</dd>
+          <dt data-d="2">Tuesday</dt><dd>9.00am to 3.00pm</dd>
+          <dt data-d="3">Wednesday</dt><dd>9.00am to 1.00pm</dd>
+          <dt data-d="4">Thursday</dt><dd>9.00am to 3.00pm</dd>
+          <dt data-d="5">Friday</dt><dd>9.00am to 3.00pm</dd>
+          <dt data-d="6">Saturday</dt><dd>9.00am to 1.00pm</dd>
+          <dt data-d="0">Sunday</dt><dd class="closed">Closed</dd>
+        </dl>
       <div class="collect"><b>Free parking</b> right outside the shop, so you can pull up, drop off and go.</div>
         <div class="collect">Free local collection and delivery. Give us a ring and we'll arrange a time that suits you.</div>
     </div>
@@ -829,6 +843,19 @@ footer a{color:#fff}
     links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
   }
   window.addEventListener('scroll',mark,{passive:true});mark();
+})();
+</script>
+<script>
+(function(){
+  var close={1:15,2:15,3:13,4:15,5:15,6:13,0:null},open=9;
+  var now=new Date(),d=now.getDay(),hr=now.getHours()+now.getMinutes()/60;
+  var dts=document.querySelectorAll('#hours dt');
+  dts.forEach(function(dt){if(+dt.getAttribute('data-d')===d){dt.classList.add('is-today');dt.nextElementSibling.classList.add('is-today')}});
+  var el=document.getElementById('today'),c=close[d],fmt=function(x){return x===13?'1pm':x===15?'3pm':x+'am'};
+  function nextOpen(){for(var i=1;i<=7;i++){var n=(d+i)%7;if(close[n])return (i===1?'tomorrow':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][n])+' at 9am'}}
+  if(c&&hr>=open&&hr<c){el.textContent='Open now, until '+fmt(c)+' today'}
+  else if(c&&hr<open){el.textContent='Opens today at 9am'}
+  else{el.textContent='Closed now. Opens '+nextOpen();el.classList.add('shut')}
 })();
 </script>
 <script>
