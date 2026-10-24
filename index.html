@@ -57,18 +57,19 @@ gtag('config','G-F85MXCJDR1',{anonymize_ip:true,send_page_view:true});
   --text:#1B2B3F;
   --muted:#5A6B80;
   --line:#D3DEEA;
+  --cream:#F3EBDD;--sage:#DDE7D8;--blush:#F3DEDD;--camel:#EBDCC3;--mustard:#F1E5C4;--gold:#C9A24A;
   --head:'Libre Franklin','Helvetica Neue',Arial,sans-serif;
   --body:'Source Sans 3','Segoe UI',Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --ice:#0E1A28;--white:#15243A;--sky:#243B5A;--blue:#7FB2E8;--navy:#1B3253;--deep:#0A1626;
-    --text:#E6EEF7;--muted:#9FB2C8;--line:#243B5A;color-scheme:dark;
+    --text:#E6EEF7;--muted:#9FB2C8;--line:#243B5A;--cream:#2A2A24;--sage:#1F2A22;--blush:#2E2224;--camel:#2B2620;--mustard:#2C2920;color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --ice:#0E1A28;--white:#15243A;--sky:#243B5A;--blue:#7FB2E8;--navy:#1B3253;--deep:#0A1626;
-  --text:#E6EEF7;--muted:#9FB2C8;--line:#243B5A;color-scheme:dark;
+  --text:#E6EEF7;--muted:#9FB2C8;--line:#243B5A;--cream:#2A2A24;--sage:#1F2A22;--blush:#2E2224;--camel:#2B2620;--mustard:#2C2920;color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -88,6 +89,7 @@ a{color:var(--blue)}
 .btn.onblue.ghost{background:transparent;color:#fff}
 .photo{background:var(--sky);border-radius:4px;display:grid;place-items:center;text-align:center;padding:0;color:var(--navy);font-size:13px;max-width:100%;overflow:hidden}
 .photo .ill{width:100%;height:100%;display:block}
+.slot{display:none}
 .photo{position:relative}
 .photo .real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .hero .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
@@ -297,6 +299,42 @@ footer .fb-link:hover{text-decoration:underline}
 .privacy-body{max-width:40em;font-size:14.5px;color:var(--muted);padding-top:10px;display:grid;gap:10px}
 .privacy-body b{color:var(--text);font-weight:600}
 footer a{color:#fff}
+
+/* pastel mounts behind the service pictures, one colour per service */
+.svc .photo,.map,.shopfront,.ba .photo{position:relative}
+.svc>.photo::before,.map::before,.ba::before,.shopfront::before{content:"";position:absolute;inset:14px -14px -14px 14px;border-radius:6px;z-index:-1}
+.svc>.photo,.map,.shopfront,.ba .photo{overflow:visible;z-index:0}
+.photo .ill,.photo .real{border-radius:4px}
+.svc>.photo::before,.map::before,.ba::before,.shopfront::before{box-shadow:none}
+#dry-cleaning>.photo::before{background:var(--camel)}
+#laundry>.photo::before{background:var(--sage)}
+#alterations>.photo::before{background:var(--blush)}
+#shoes>.photo::before{background:var(--mustard)}
+.ba{position:relative;z-index:0}.ba::before{background:var(--blush)}
+.map{z-index:0;margin-bottom:14px}.map::before{background:var(--cream)}
+.shopfront{z-index:0}.shopfront::before{background:rgba(201,162,74,.22)}
+/* little colour on headings and lists */
+.services>.wrap>h2::after,.find h2::after{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--gold);margin-top:12px}
+.about h2::after{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--gold);margin-top:12px}
+.intro li:nth-child(2)::before{background:#8FA68C}.intro li:nth-child(3)::before{background:#C97B5C}.intro li:nth-child(4)::before{background:var(--gold)}.intro li:nth-child(5)::before{background:#B08F62}.intro li:nth-child(6)::before{background:#D98B7A}
+/* notes and lists */
+.collect{background:var(--cream);border-left-color:var(--gold)}
+.collect+.collect{background:var(--sage);border-left-color:#8FA68C}
+.agents td:first-child{padding-left:16px;position:relative}
+.agents td:first-child::before{content:"";position:absolute;left:0;top:50%;width:7px;height:7px;border-radius:50%;transform:translateY(-50%);background:var(--gold)}
+.agents tr:nth-child(2) td:first-child::before{background:#8FA68C}.agents tr:nth-child(3) td:first-child::before{background:#C97B5C}.agents tr:nth-child(4) td:first-child::before{background:#B08F62}
+/* offer panel: warm glow and gold price */
+.offer.lead{background:linear-gradient(110deg,var(--deep),var(--navy) 60%,#24466F)}
+.offer.lead .price{color:var(--gold)}
+.offer.lead .tag{color:#E8CB85}
+.offers{background:linear-gradient(180deg,var(--white),var(--cream))}
+/* about band: faint warm edge */
+.about{background:linear-gradient(100deg,var(--navy) 0%,var(--navy) 70%,#1E3F66 100%)}
+/* cards in find us */
+.contact{border-top:4px solid var(--gold)}
+.agents{border-top:4px solid #8FA68C}
+.agents{background:var(--white);border:1px solid var(--line);border-top:4px solid #8FA68C;border-radius:4px;padding:22px 24px;margin-top:22px}
+.find .wrap>div:last-child{display:flex;flex-direction:column}
 
 footer{background:var(--deep);color:rgba(255,255,255,.7);font-size:14px}
 footer .wrap{padding-block:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
