@@ -19,6 +19,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- Google tag (gtag.js) with consent mode: nothing is stored until the visitor accepts -->
 <script>
+// Always open at the top (browsers otherwise restore the last scroll position, or jump to a #hash)
+if('scrollRestoration' in history){history.scrollRestoration='manual'}
+if(location.hash){history.replaceState(null,'',location.pathname+location.search)}
+window.scrollTo(0,0);
+window.addEventListener('pageshow',function(){window.scrollTo(0,0)});
+</script>
+<script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
 try{if(localStorage.getItem('cdc-consent')==='granted'){gtag('consent','update',{analytics_storage:'granted'})}}catch(e){}
