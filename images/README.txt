@@ -1,8 +1,9 @@
 Capital Dry Cleaning - photos
 =============================
 
-Drop photos into this folder with these exact filenames (jpg) and the site picks them up on refresh.
-Any that are missing just keep the blue illustration.
+Drop photos into this folder with these exact filenames (jpg), then add each filename to photos.json,
+e.g. ["hero.jpg","shopfront.jpg","dry-cleaning.jpg"]. The site only loads photos listed there.
+Any slot not listed keeps the blue illustration.
 
 hero.jpg                 wide shot of the shop interior or pressing room (shows behind the headline, darkened)
 shopfront.jpg            the shop from the street
