@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://capitaldrycleaning.co.uk/sitemap.xml
