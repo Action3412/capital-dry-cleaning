@@ -17,6 +17,15 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<!-- Google tag (gtag.js) with consent mode: nothing is stored until the visitor accepts -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+try{if(localStorage.getItem('cdc-consent')==='granted'){gtag('consent','update',{analytics_storage:'granted'})}}catch(e){}
+gtag('js',new Date());
+gtag('config','G-F85MXCJDR1',{anonymize_ip:true,send_page_view:true});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F85MXCJDR1"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap">
 <style>
 /* Layout: straightforward single column, full-width photo hero, services alternating photo and text, navy band for the family, plain contact block. Blue throughout, from navy to pale ice. */
@@ -239,6 +248,13 @@ footer .fb-link:hover{text-decoration:underline}
 .offer.lead .fine{color:rgba(255,255,255,.6)}
 .offers .how{margin-top:28px;display:flex;gap:12px 32px;flex-wrap:wrap;align-items:center;font-size:16px;color:var(--muted)}
 @media (max-width:800px){.offer-grid{grid-template-columns:1fr}.offer.lead{grid-column:span 1;grid-template-columns:1fr}.offer.lead .price,.offer.lead .price small{text-align:left}}
+
+/* cookie notice */
+.cookie{position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;max-width:560px;margin:0 auto;background:var(--white);color:var(--text);border:1px solid var(--line);border-radius:6px;box-shadow:0 12px 40px rgba(23,54,92,.18);padding:16px 18px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:15px}
+.cookie p{flex:1 1 260px;margin:0;line-height:1.45}
+.cookie .btns{display:flex;gap:8px}
+.cookie .btn{padding:9px 16px;font-size:14px}
+.cookie[hidden]{display:none}
 
 footer{background:var(--deep);color:rgba(255,255,255,.7);font-size:14px}
 footer .wrap{padding-block:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -896,6 +912,11 @@ footer a{color:#fff}
   </div>
 </section>
 
+
+<div class="cookie" id="cookie" hidden role="dialog" aria-label="Cookies">
+  <p>We use Google Analytics to see how many people visit and which bits get used, so we can make the site better. No ads, nothing sold on. OK with that?</p>
+  <div class="btns"><button class="btn" id="cookie-yes" type="button">Yes, fine</button><button class="btn ghost" id="cookie-no" type="button">No thanks</button></div>
+</div>
 <footer>
   <div class="wrap">
     <span>Capital Dry Cleaning, 11 The Centre, High Street, Halstead CO9 2AJ · <a href="tel:01787477230">01787 477230</a></span>
@@ -948,6 +969,38 @@ footer a{color:#fff}
   ['mouseleave','touchend','focusout'].forEach(function(e){s.addEventListener(e,function(){paused=false},{passive:true})});
   w.querySelector('.prev').addEventListener('click',function(){boost-=328});
   w.querySelector('.next').addEventListener('click',function(){boost+=328});
+})();
+</script>
+<script>
+(function(){
+  var box=document.getElementById('cookie'),saved=null;
+  try{saved=localStorage.getItem('cdc-consent')}catch(e){}
+  if(!saved){box.hidden=false}
+  function set(v){try{localStorage.setItem('cdc-consent',v)}catch(e){}box.hidden=true;
+    if(v==='granted'){gtag('consent','update',{analytics_storage:'granted'})}}
+  document.getElementById('cookie-yes').addEventListener('click',function(){set('granted')});
+  document.getElementById('cookie-no').addEventListener('click',function(){set('denied')});
+
+  function ev(name,p){try{gtag('event',name,p||{})}catch(e){}}
+  // phone, directions, facebook, email-type links
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(a){a.addEventListener('click',function(){ev('call_click',{location:a.closest('.util')?'top bar':a.closest('.hero')?'hero':a.closest('.find')?'find us':a.closest('footer')?'footer':'other'})})});
+  document.querySelectorAll('a[href*="maps.google"]').forEach(function(a){a.addEventListener('click',function(){ev('directions_click')})});
+  document.querySelectorAll('a[href*="facebook.com"]').forEach(function(a){a.addEventListener('click',function(){ev('facebook_click',{location:a.closest('footer')?'footer':'top bar'})})});
+  // nav + promo + hero buttons
+  document.querySelectorAll('#mainnav a').forEach(function(a){a.addEventListener('click',function(){ev('nav_click',{item:a.textContent.trim()})})});
+  document.querySelectorAll('.promo a').forEach(function(a){a.addEventListener('click',function(){ev('offer_bar_click')})});
+  document.querySelectorAll('.hero .cta a').forEach(function(a){a.addEventListener('click',function(){ev('hero_button_click',{label:a.textContent.trim()})})});
+  // carousel arrows
+  document.querySelectorAll('.car-btn').forEach(function(b){b.addEventListener('click',function(){ev('carousel_arrow',{direction:b.classList.contains('next')?'next':'prev'})})});
+  // sections seen
+  if('IntersectionObserver' in window){
+    var seen={};var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!seen[e.target.id]){seen[e.target.id]=1;ev('section_view',{section:e.target.id})}})},{threshold:.4});
+    ['dry-cleaning','laundry','alterations','shoes','wedding','offers','about','find-us'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+  // scroll depth
+  var marks={25:0,50:0,75:0,100:0};
+  window.addEventListener('scroll',function(){var d=document.documentElement,p=Math.round((window.scrollY+window.innerHeight)/d.scrollHeight*100);
+    [25,50,75,100].forEach(function(m){if(p>=m&&!marks[m]){marks[m]=1;ev('scroll_depth',{percent:m})}})},{passive:true});
 })();
 </script>
 
