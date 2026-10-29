@@ -118,14 +118,15 @@ footer .fb-link{display:inline-flex;align-items:center;gap:8px;color:#fff;text-d
 footer .fb-link svg{width:16px;height:16px}
 footer .fb-link:hover{text-decoration:underline}
 .top{background:var(--white);position:sticky;top:env(safe-area-inset-top,0px);z-index:9;box-shadow:0 1px 0 var(--line),0 6px 24px rgba(23,54,92,.06)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-block:12px;white-space:nowrap}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-block:12px;white-space:nowrap}
+@media (min-width:1181px){.top .wrap{max-width:1280px}}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy);font-family:var(--head);font-weight:700;font-size:20px;line-height:1;flex:none;letter-spacing:-.01em}
 .logo .mark{width:42px;height:42px;border-radius:9px;background:#17365C;display:grid;place-items:center;flex:none}
 .logo .mark svg{width:40px;height:40px;border-radius:8px}
 .logo small{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
 .top nav{flex:none}
-.top nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px;align-items:center}
-.top nav a{text-decoration:none;color:var(--text);font-size:15.5px;font-weight:500;padding:6px 0;position:relative;white-space:nowrap;transition:color .15s}
+.top nav ul{list-style:none;margin:0;padding:0;display:flex;gap:20px;align-items:center}
+.top nav a{text-decoration:none;color:var(--text);font-size:15px;font-weight:500;padding:6px 0;position:relative;white-space:nowrap;transition:color .15s}
 .top nav a:not(.sticker)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .2s}
 .top nav a:hover,.top nav a.active{color:var(--navy)}
 .top nav a:not(.sticker):hover::after,.top nav a:not(.sticker).active::after{transform:scaleX(1)}
@@ -138,17 +139,17 @@ footer .fb-link:hover{text-decoration:underline}
 .sticker::after{content:"";position:absolute;left:50%;top:-6px;width:22px;height:8px;background:rgba(255,255,255,.55);border-radius:2px;transform:translateX(-50%) rotate(4deg)}
 .top nav a.sticker::after{display:block;background:rgba(255,255,255,.55);height:8px;transform:translateX(-50%) rotate(4deg)}
 .top nav a.sticker:hover{color:#17365C}
-@media (max-width:1120px){
+@media (max-width:1180px){
   .top nav li.keep{display:none}
   .top .wrap .sticker-mobile{display:inline-flex}
 }
 .sticker-mobile{display:none;margin-right:10px}
 .top .right{display:flex;align-items:center;gap:6px;flex:none}
-@media (min-width:1121px){.top .right{display:none}}
+@media (min-width:1181px){.top .right{display:none}}
 @media (max-width:520px){.sticker .s-main{font-size:12.5px}.sticker{padding:5px 10px 6px}}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:42px;height:42px;cursor:pointer;color:var(--navy);place-items:center;flex:none}
 .burger svg{width:22px;height:22px}
-@media (max-width:1120px){
+@media (max-width:1180px){
   .top nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--white);box-shadow:0 12px 30px rgba(23,54,92,.12);padding:12px max(16px,env(safe-area-inset-left,0px)) 18px}
   .top nav.open{display:block}
   .top nav ul{flex-direction:column;align-items:stretch;gap:2px}
@@ -341,6 +342,25 @@ footer a{color:#fff}
 .find .wrap>div:last-child{display:flex;flex-direction:column}
 
 /* reviews */
+/* prices */
+.prices{background:var(--ice);border-top:1px solid var(--line)}
+.prices .wrap{padding-block:64px}
+.prices h2{margin-bottom:8px}
+.prices .lede{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.price-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.pc{background:var(--white);border:1px solid var(--line);border-radius:4px;padding:14px 14px 16px;display:flex;flex-direction:column;gap:12px;min-width:0;position:relative;transition:transform .2s,box-shadow .2s}
+.pc:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(23,54,92,.10)}
+.pc .pic{aspect-ratio:1;border-radius:4px;overflow:hidden;position:relative}
+.pc .pic svg{width:100%;height:100%;display:block}
+.pc h3{font-size:18px;font-weight:600;color:var(--navy);margin:0}
+.pc .sub{font-size:14px;color:var(--muted);margin-top:-8px}
+.pc .amt{display:flex;align-items:baseline;gap:6px;margin-top:auto}
+.pc .amt small{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-family:var(--head);font-weight:600}
+.pc .amt b{font-family:var(--head);font-size:26px;font-weight:700;color:var(--navy);line-height:1}
+.prices .fine{margin-top:22px;display:flex;gap:10px 28px;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:15px;color:var(--muted)}
+.prices .fine a{color:var(--blue);font-weight:600}
+@media (max-width:960px){.price-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:600px){.price-grid{grid-template-columns:repeat(2,1fr);gap:12px}.pc{padding:10px 10px 12px}.pc h3{font-size:16px}.pc .amt b{font-size:22px}.prices .wrap{padding-block:48px}}
 .reviews{background:var(--white);border-top:1px solid var(--line)}
 .reviews .wrap{padding-block:64px}
 .rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
@@ -815,6 +835,31 @@ footer a{color:#fff}
  <rect x="88" y="76" width="24" height="18" rx="2" fill="#C97A3E"/>
 </symbol>
 <radialGradient id="eyeg" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#FFF3A0"/><stop offset="1" stop-color="#F0C436"/></radialGradient>
+<symbol id="i-p-jacket" viewBox="0 0 200 200">
+ <rect width="200" height="200" fill="url(#g-bg)"/>
+ <g filter="url(#sh)"><path d="M100 42 l-18 6 l-30 16 l-6 50 l16 4 v50 h76 v-50 l16 -4 l-6 -50 l-30 -16 l-18 -6z" fill="#5E7A8F"/></g>
+ <path d="M100 42 l-20 12 l12 60 l-2 54 h20 l-2 -54 l12 -60z" fill="#4A6579"/>
+ <path d="M100 42 l-20 12 l14 46 l6 10 l6 -10 l14 -46z" fill="#7C98AC"/>
+ <path d="M100 42 l-9 6 l9 54 l9 -54z" fill="#EAF1F8"/>
+ <path d="M100 56 l-4 -6 l4 -4 l4 4z" fill="#C97B5C"/>
+ <g fill="#C9A24A"><circle cx="106" cy="126" r="3"/><circle cx="106" cy="144" r="3"/></g>
+ <path d="M60 126 h16 v12 h-16z M124 126 h16 v12 h-16z" fill="#4A6579"/>
+ <rect x="60" y="124" width="16" height="4" fill="#3B5366"/><rect x="124" y="124" width="16" height="4" fill="#3B5366"/>
+</symbol>
+<symbol id="i-p-suit" viewBox="0 0 200 200">
+ <rect width="200" height="200" fill="url(#g-bg)"/>
+ <path d="M100 14 c-9 0 -9 10 -3 12 v8" stroke="#8A7B5E" stroke-width="3" fill="none" stroke-linecap="round"/>
+ <path d="M40 60 l60 -26 l60 26 h-6 l-54 -20 l-54 20z" fill="#8A7B5E"/>
+ <g filter="url(#sh)"><path d="M100 40 l-18 6 l-30 16 l-6 50 l16 4 v38 h76 v-38 l16 -4 l-6 -50 l-30 -16 l-18 -6z" fill="url(#g-navy)"/></g>
+ <path d="M100 40 l-20 12 l12 58 l-2 44 h20 l-2 -44 l12 -58z" fill="#0E2340"/>
+ <path d="M100 40 l-20 12 l14 44 l6 10 l6 -10 l14 -44z" fill="#2A4C78"/>
+ <path d="M100 40 l-9 6 l9 52 l9 -52z" fill="#fff"/>
+ <path d="M100 52 l-5 -6 l5 -5 l5 5z" fill="#C9A24A"/>
+ <circle cx="107" cy="122" r="3" fill="#C9A24A"/>
+ <path d="M72 154 h56 l4 30 h-20 l-12 -22 l-12 22 h-20z" fill="#17365C"/>
+ <path d="M72 154 h56 v6 h-56z" fill="#0A1A2E" opacity=".4"/>
+ <path d="M62 124 h16 v12 h-16z M122 124 h16 v12 h-16z" fill="#0E2340"/>
+</symbol>
 <symbol id="i-lizard" viewBox="0 0 220 220">
  <g stroke="#1E3A1E" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
   <!-- tail: long S curve ending in a spiral -->
@@ -919,6 +964,7 @@ footer a{color:#fff}
         <li><a href="#alterations">Alterations</a></li>
         <li><a href="#shoes">Shoe repairs</a></li>
         <li><a href="#wedding">Weddings</a></li>
+        <li><a href="#prices">Prices</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li class="keep"><a href="#offers" class="sticker" aria-label="Current offer: any duvet cleaned for £10"><span class="s-top">Offer</span><span class="s-main">Duvets £10</span></a></li>
         <li><a href="#about">About</a></li>
@@ -1098,6 +1144,28 @@ footer a{color:#fff}
 </section>
 
 
+
+<section class="prices" id="prices">
+  <div class="wrap">
+    <div class="lede">
+      <div>
+        <h2>Prices</h2>
+        <p class="muted measure">A guide to what the everyday things cost. Every garment is different, so these are starting prices. If anything is going to be more, we'll say so before we start.</p>
+      </div>
+    </div>
+    <div class="price-grid">
+      <div class="pc"><div class="pic"><svg><use href="#i-trousers"/></svg></div><h3>Trousers</h3><div class="amt"><small>from</small><b>£8.50</b></div></div>
+      <div class="pc"><div class="pic"><svg><use href="#i-p-jacket"/></svg></div><h3>Jacket</h3><div class="amt"><small>from</small><b>£8.95</b></div></div>
+      <div class="pc"><div class="pic"><svg><use href="#i-dresses"/></svg></div><h3>Dress</h3><div class="amt"><small>from</small><b>£9.95</b></div></div>
+      <div class="pc"><div class="pic"><svg><use href="#i-shirts"/></svg></div><h3>Shirts</h3><div class="sub">Five, washed and pressed</div><div class="amt"><small>from</small><b>£10.00</b></div></div>
+      <div class="pc"><div class="pic"><svg><use href="#i-p-suit"/></svg></div><h3>Two-piece suit</h3><div class="amt"><small>from</small><b>£16.95</b></div></div>
+    </div>
+    <div class="fine">
+      <span>Specialist fabrics, heavy soiling and hand finishing may cost a little more. Full price list in the shop.</span>
+      <span>Not sure? Ring <a href="tel:01787477230">01787 477230</a> and we'll give you a price over the phone.</span>
+    </div>
+  </div>
+</section>
 
 <section class="reviews" id="reviews">
   <div class="wrap">
