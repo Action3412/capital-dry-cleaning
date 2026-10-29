@@ -592,30 +592,49 @@ footer a{color:#fff}
  <rect x="236" y="156" width="26" height="22" rx="2" fill="#B8694A"/><g fill="#5E9C6E"><circle cx="243" cy="152" r="8"/><circle cx="255" cy="150" r="8"/><circle cx="249" cy="144" r="7"/></g>
 </symbol>
 
-<!-- map -->
+<!-- map: Halstead town centre, stylised -->
 <symbol id="i-map" viewBox="0 0 400 300">
  <rect width="400" height="300" fill="#EEF0E8"/>
- <!-- fields -->
- <g fill="#D9E4CB"><path d="M-10 -10 h180 l-40 90 l-140 30z"/><path d="M300 -10 h110 v120 l-150 -30z"/><path d="M-10 200 l120 -20 l60 130 h-180z"/><path d="M280 180 l130 -20 v150 h-180z"/></g>
- <path d="M40 230 q60 -40 120 0 t120 0" stroke="#AFC9DD" stroke-width="10" fill="none" opacity=".8"/>
+ <!-- green: Public Gardens, river meadows, church yard -->
+ <g fill="#D9E4CB"><path d="M250 20 h150 v110 h-120 q-20 -10 -30 -40z"/><path d="M-10 200 h90 l20 40 l-30 70 h-80z"/><path d="M300 210 h110 v100 h-90 l-30 -50z"/><circle cx="118" cy="52" r="34"/></g>
+ <!-- built-up blocks -->
+ <g fill="#E3DACB"><rect x="150" y="60" width="38" height="26"/><rect x="150" y="96" width="38" height="30"/><rect x="150" y="136" width="38" height="24"/><rect x="214" y="70" width="30" height="22"/><rect x="214" y="100" width="30" height="40"/><rect x="214" y="150" width="30" height="22"/><rect x="150" y="190" width="38" height="20"/><rect x="214" y="186" width="30" height="24"/><rect x="100" y="104" width="30" height="20"/><rect x="100" y="134" width="30" height="20"/><rect x="258" y="104" width="30" height="20"/><rect x="258" y="134" width="30" height="20"/></g>
+ <!-- The Centre: little precinct off the High Street -->
+ <path d="M214 100 h40 v40 h-40z" fill="#D8C9B3"/>
+ <!-- River Colne -->
+ <path d="M-10 250 C 60 240, 120 262, 200 252 S 330 230, 410 246" stroke="#AFC9DD" stroke-width="12" fill="none" stroke-linecap="round"/>
+ <!-- roads -->
  <g stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M-10 170 C 80 150, 140 200, 230 160 S 360 120, 420 150"/>
-  <path d="M190 -10 C 200 80, 160 140, 200 220 S 220 290, 240 320"/>
-  <path d="M-10 70 C 60 90, 120 60, 180 100"/>
-  <path d="M260 310 C 300 240, 340 230, 420 240"/>
+  <path d="M200 -10 L200 240"/>                       <!-- Head St / High St -->
+  <path d="M200 240 q0 30 10 60"/>                   <!-- Bridge St over the Colne -->
+  <path d="M200 90 C 260 90, 320 110, 410 120"/>     <!-- Colchester Rd -->
+  <path d="M200 60 C 150 50, 100 60, -10 40"/>       <!-- Hedingham Rd -->
+  <path d="M200 170 C 260 170, 300 200, 410 210"/>   <!-- Kings Rd / Parsonage St -->
+  <path d="M200 150 C 150 150, 120 180, 70 180 C 40 180, 20 210, -10 220"/> <!-- Chapel St / The Causeway -->
+  <path d="M200 200 h-56"/>                          <!-- Trinity St -->
+  <path d="M200 120 h58"/>                            <!-- Factory Lane -->
  </g>
- <g stroke="#D4DEE8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M-10 170 C 80 150, 140 200, 230 160 S 360 120, 420 150"/>
-  <path d="M190 -10 C 200 80, 160 140, 200 220 S 220 290, 240 320"/>
+ <g stroke="#D4DEE8" stroke-width="2" fill="none" stroke-linecap="round"><path d="M200 -10 L200 240 M200 90 C 260 90, 320 110, 410 120 M200 60 C 150 50, 100 60, -10 40"/></g>
+ <!-- church at the top of the High Street -->
+ <g transform="translate(118,52)"><rect x="-10" y="-6" width="20" height="16" fill="#B8A98F"/><path d="M-5 -6 l5 -14 l5 14z" fill="#8A7B5E"/></g>
+ <!-- labels -->
+ <g font-family="Source Sans 3, Arial, sans-serif" font-size="9.5" fill="#5A6B80">
+  <text x="206" y="30">Head Street</text>
+  <text x="206" y="232">High Street</text>
+  <text x="300" y="104">Colchester Road</text>
+  <text x="60" y="52">Hedingham Road</text>
+  <text x="300" y="196">Kings Road</text>
+  <text x="104" y="176">Chapel Street</text>
+  <text x="150" y="196">Trinity St</text>
+  <text x="60" y="270">River Colne</text>
+  <text x="90" y="92" font-size="8.5" fill="#8A7B5E">St Andrew's</text>
+  <text x="258" y="46" font-size="8.5" fill="#6E8A6B">Public Gardens</text>
  </g>
- <g fill="#D8C9B3"><rect x="150" y="120" width="14" height="10"/><rect x="212" y="134" width="16" height="10"/><rect x="176" y="178" width="12" height="12"/><rect x="226" y="180" width="18" height="10"/><rect x="160" y="196" width="14" height="10"/></g>
- <g font-family="Source Sans 3, Arial, sans-serif" font-size="12" fill="var(--navy)">
-  <g transform="translate(300,80)"><circle r="8" fill="var(--blue)" stroke="#fff" stroke-width="2.5" filter="url(#sh-s)"/><text x="13" y="4">Pebmarsh</text></g>
-  <g transform="translate(90,70)"><circle r="8" fill="var(--blue)" stroke="#fff" stroke-width="2.5" filter="url(#sh-s)"/><text x="13" y="4">Sible Hedingham</text></g>
-  <g transform="translate(300,220)"><circle r="8" fill="var(--blue)" stroke="#fff" stroke-width="2.5" filter="url(#sh-s)"/><text x="13" y="4">Colne Engaine</text></g>
-  <g transform="translate(70,230)"><circle r="8" fill="var(--blue)" stroke="#fff" stroke-width="2.5" filter="url(#sh-s)"/><text x="13" y="4">Greensted Green</text></g>
-  <g transform="translate(205,160)" filter="url(#sh)"><path d="M0 0 c-14 -18 -16 -22 -16 -30 a16 16 0 1 1 32 0 c0 8 -2 12 -16 30z" fill="#C4553A"/><circle cy="-30" r="6" fill="#fff"/><text x="22" y="-24" font-weight="700" font-size="13">Halstead</text></g>
- </g>
+ <!-- free parking marker beside The Centre -->
+ <g transform="translate(262,116)"><rect x="0" y="0" width="13" height="13" rx="2" fill="#2C6AAE"/><text x="6.5" y="10" text-anchor="middle" font-family="Arial" font-weight="700" font-size="9" fill="#fff">P</text><text x="17" y="10" font-family="Source Sans 3, Arial, sans-serif" font-size="8" fill="#2C6AAE">free</text></g>
+ <!-- CDC pin -->
+ <g transform="translate(234,124)" filter="url(#sh)"><path d="M0 0 c-16 -20 -18 -25 -18 -34 a18 18 0 1 1 36 0 c0 9 -2 14 -18 34z" fill="#C4553A"/><circle cy="-34" r="7" fill="#fff"/></g>
+ <g transform="translate(234,124)"><text x="0" y="16" text-anchor="middle" font-family="Libre Franklin, Arial, sans-serif" font-weight="700" font-size="11" fill="var(--navy)">Capital Dry Cleaning</text><text x="0" y="28" text-anchor="middle" font-family="Source Sans 3, Arial, sans-serif" font-size="8.5" fill="#5A6B80">11 The Centre, off the High Street</text></g>
 </symbol>
 
 <!-- portraits -->
@@ -1232,7 +1251,7 @@ footer a{color:#fff}
         <div class="collect">Free local collection and delivery. Give us a ring and we'll arrange a time that suits you.</div>
     </div>
     <div>
-      <div class="photo map"><svg class="ill" preserveAspectRatio="xMidYMid slice"><use href="#i-map"/></svg><span class="slot" data-photo="map.jpg"></span></div>
+      <div class="photo map"><svg class="ill" preserveAspectRatio="xMidYMid meet"><use href="#i-map"/></svg><span class="slot" data-photo="map.jpg"></span></div>
       <div class="agents">
         <h3>Drop-off points</h3>
         <p class="muted">If Halstead isn't handy, you can leave items with one of our local agents and collect them from there.</p>
