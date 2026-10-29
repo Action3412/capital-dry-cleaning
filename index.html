@@ -78,7 +78,7 @@ gtag('js',new Date());
 gtag('config','G-F85MXCJDR1',{anonymize_ip:true,send_page_view:true});
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F85MXCJDR1"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600&display=swap">
 <style>
 /* Layout: straightforward single column, full-width photo hero, services alternating photo and text, navy band for the family, plain contact block. Blue throughout, from navy to pale ice. */
 :root{
@@ -201,11 +201,13 @@ footer .fb-link:hover{text-decoration:underline}
 .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .hero .img{position:absolute;inset:0;background:linear-gradient(100deg,var(--deep) 0%,var(--navy) 45%,var(--blue) 120%)}
 .hero .wrap{position:relative;padding-block:84px 72px}
-.hero .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--head);font-size:13.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--head);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
 .hero .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
-.hero h1{font-size:clamp(38px,5.8vw,66px);font-weight:700;max-width:14em;line-height:1.04;letter-spacing:-.012em;text-shadow:0 2px 24px rgba(10,26,46,.45)}
-.hero h1::after{content:"";display:block;width:56px;height:3px;background:var(--gold);margin-top:26px;border-radius:2px}
-.hero p{font-size:21px;margin-top:22px;max-width:29em;color:rgba(255,255,255,.88);line-height:1.5;text-shadow:0 1px 12px rgba(10,26,46,.35)}
+.hero h1{font-size:clamp(38px,5.4vw,64px);font-weight:800;max-width:12.5em;line-height:1.04;letter-spacing:-.018em;text-wrap:balance;text-shadow:0 2px 24px rgba(10,26,46,.5)}
+.hero h1 .place{color:var(--gold)}
+.hero h1 .soft{color:var(--sky)}
+.hero h1::after{content:"";display:block;width:48px;height:3px;background:var(--gold);margin-top:20px;border-radius:2px}
+.hero p{font-size:20px;margin-top:20px;max-width:30em;color:rgba(255,255,255,.88);line-height:1.5;text-wrap:pretty;text-shadow:0 1px 12px rgba(10,26,46,.35)}
 .hero p strong{color:#fff;font-weight:600}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero .cta .btn{border-color:#fff}
@@ -1038,8 +1040,8 @@ footer a{color:#fff}
   <div class="img"><span class="slot" data-photo="hero.jpg" data-hero="1"></span><svg class="tex" viewBox="0 0 960 480" preserveAspectRatio="xMidYMid slice"><use href="#i-garments" x="0" y="0" width="480" height="240"/><use href="#i-garments" x="480" y="0" width="480" height="240"/><use href="#i-garments" x="0" y="240" width="480" height="240"/><use href="#i-garments" x="480" y="240" width="480" height="240"/></svg></div>
   <div class="wrap">
     <div class="eyebrow">Family-run in Halstead since the 1980s</div>
-    <h1>Dry cleaning, laundry and alterations in Halstead</h1>
-    <p>An independent cleaners right in the heart of Halstead, just off the High Street. <strong>Everything is cleaned and pressed here on the premises, by us.</strong> Alterations and shoe repairs too. Free parking outside, or we can collect and deliver for free locally.</p>
+    <h1>Dry cleaning, laundry <span class="soft">and</span> alterations <span class="soft">in</span> <span class="place">Halstead</span></h1>
+    <p>An independent cleaners in the heart of Halstead, just off the High Street. <strong>All cleaning and pressing is done here on the premises, by us.</strong> Alterations and shoe repairs arranged through the shop. Free parking outside, or free local collection and delivery.</p>
     <div class="cta">
       <a class="btn onblue" href="#find-us">Find us and opening hours</a>
       <a class="btn onblue ghost" href="tel:01787477230">Call to arrange collection</a>
